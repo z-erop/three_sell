@@ -37,6 +37,7 @@ function user() {
         console.log(sql);
         connection.query(sql,function (err,res) {
             if (!err){
+                console.log(res,11);
                 call(res)
             }else{
                 console.log('查找用户名没搞对');
@@ -50,9 +51,9 @@ function user() {
         var sql = 'INSERT INTO admins(username,passwd) VALUES(?,?)';
         var sql_params = [name,passwd];
         connection.query(sql,sql_params,function (err,res) {
-            console.log(11)
             if (!err){
                 console.log(res)
+                call();
             }
             else{
                 console.log(sql_params);
